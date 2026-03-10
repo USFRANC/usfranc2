@@ -31,20 +31,11 @@ CFeeRate::CFeeRate(const CAmount& nFeePaid, size_t nBytes_, uint64_t mweb_weight
 
 CAmount CFeeRate::GetFee(size_t nBytes_) const
 {
-    assert(nBytes_ <= uint64_t(std::numeric_limits<int64_t>::max()));
-    int64_t nSize = int64_t(nBytes_);
-
-    CAmount nFee = nSatoshisPerK * nSize / 1000;
-
-    if (nFee == 0 && nSize != 0) {
-        if (nSatoshisPerK > 0)
-            nFee = CAmount(1);
-        if (nSatoshisPerK < 0)
-            nFee = CAmount(-1);
-    }
-
-    return nFee;
+    // Zero-fee policy: per-byte fee calculation disabled
+    (void)nBytes_;
+    return 0;
 }
+
 
 CAmount CFeeRate::GetMWEBFee(uint64_t mweb_weight) const
 {

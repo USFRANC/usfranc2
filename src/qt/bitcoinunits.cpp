@@ -19,7 +19,7 @@ QList<BitcoinUnits::Unit> BitcoinUnits::availableUnits()
     QList<BitcoinUnits::Unit> unitlist;
     unitlist.append(BTC);
     unitlist.append(mBTC);
-    unitlist.append(uBTC);
+    // unitlist.append(uBTC);
     unitlist.append(SAT);
     return unitlist;
 }
@@ -30,7 +30,7 @@ bool BitcoinUnits::valid(int unit)
     {
     case BTC:
     case mBTC:
-    case uBTC:
+    //case uBTC:
     case SAT:
         return true;
     default:
@@ -42,10 +42,10 @@ QString BitcoinUnits::longName(int unit)
 {
     switch(unit)
     {
-    case BTC: return QString("LTC");
-    case mBTC: return QString("lites");
-    case uBTC: return QString("photons");
-    case SAT: return QString("liteoshi");
+    case BTC: return QString("USFF");
+    case mBTC: return QString("mUSFF");
+    //case uBTC: return QString("uUSFF");
+    case SAT: return QString("base");
     default: return QString("???");
     }
 }
@@ -54,8 +54,9 @@ QString BitcoinUnits::shortName(int unit)
 {
     switch(unit)
     {
-    case uBTC: return QString::fromUtf8("bits");
-    case SAT: return QString("sat");
+    //case uBTC: return QString::fromUtf8("bits");
+    //case SAT: return QString("sat");
+    case SAT: return QString("base");
     default: return longName(unit);
     }
 }
@@ -64,10 +65,10 @@ QString BitcoinUnits::description(int unit)
 {
     switch(unit)
     {
-    case BTC: return QString("Litecoins");
-    case mBTC: return QString("Lites (1 / 1" THIN_SP_UTF8 "000)");
-    case uBTC: return QString("Photons (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
-    case SAT: return QString("Liteoshis (sat) (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+    case BTC: return QString("USFranc (USFF)");
+    case mBTC: return QString("Milli-USFranc (1 / 1,000)");
+    //case uBTC: return QString("Micro-USFranc (1 / 1,000,000)");
+    case SAT: return QString("Base unit (1 / 10,000 USFF)");
     default: return QString("???");
     }
 }
@@ -76,11 +77,15 @@ qint64 BitcoinUnits::factor(int unit)
 {
     switch(unit)
     {
-    case BTC: return 100000000;
-    case mBTC: return 100000;
-    case uBTC: return 100;
-    case SAT: return 1;
-    default: return 100000000;
+    //case BTC: return 100000000;
+    //case mBTC: return 100000;
+    //case uBTC: return 100;
+    //case SAT: return 1;
+    //default: return 100000000;
+    case BTC:  return COIN;        // 10,000
+    case mBTC: return COIN / 1000; // 10
+    case SAT:  return 1;
+    default:   return COIN;
     }
 }
 
@@ -88,11 +93,16 @@ int BitcoinUnits::decimals(int unit)
 {
     switch(unit)
     {
-    case BTC: return 8;
-    case mBTC: return 5;
-    case uBTC: return 2;
-    case SAT: return 0;
-    default: return 0;
+    //case BTC: return 8;
+    //case mBTC: return 5;
+    //case uBTC: return 2;
+    //case SAT: return 0;
+    //default: return 0;
+    
+    case BTC:  return 4;
+    case mBTC: return 1;
+    case SAT:  return 0;
+    default:   return 0;
     }
 }
 

@@ -665,10 +665,10 @@ fs::path GetDefaultDataDir()
         pathRet = fs::path(pszHome);
 #ifdef MAC_OSX
     // macOS
-    return pathRet / "Library/Application Support/Litecoin";
+    return pathRet / "Library/Application Support/USFranc";
 #else
     // Unix-like
-    return pathRet / ".litecoin";
+    return pathRet / ".usfranc";
 #endif
 #endif
 }
