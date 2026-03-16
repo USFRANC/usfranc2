@@ -3,7 +3,7 @@ Usfranc Core integration/staging tree
 
 [![Build Status](https://travis-ci.org/usfranc-project/usfranc.svg?branch=master)](https://travis-ci.org/usfranc-project/usfranc)
 
-https://usfranc.org
+https://usfranc.com
 
 What is Usfranc?
 ----------------
@@ -15,7 +15,7 @@ out collectively by the network. Usfranc Core is the name of open source
 software which enables the use of this currency.
 
 For more information, as well as an immediately useable, binary version of
-the Usfranc Core software, see [https://usfranc.org](https://usfranc.org).
+the Usfranc Core software, see [https://usfranc.com]).
 
 License
 -------
@@ -27,7 +27,7 @@ Development Process
 -------------------
 
 The `master` branch is regularly built (see `doc/build-*.md` for instructions) and tested, but it is not guaranteed to be
-completely stable. [Tags](https://github.com/usfranc-project/usfranc/tags) are created
+completely stable. [Tags](https://github.com/USFRANC/usfranc2.git) are created
 regularly from release branches to indicate new official, stable release versions of Usfranc Core.
 
 The https://github.com/usfranc-project/gui repository is used exclusively for the
@@ -38,7 +38,7 @@ that repository unless it is for development reasons.
 The contribution workflow is described in [CONTRIBUTING.md](CONTRIBUTING.md)
 and useful hints for developers can be found in [doc/developer-notes.md](doc/developer-notes.md).
 
-The developer [mailing list](https://groups.google.com/forum/#!forum/usfranc-dev)
+The developer [mailing list](https://groups.google.com/forum/#!forum/usfranc-de)
 should be used to discuss complicated or controversial changes before working
 on a patch set.
 
