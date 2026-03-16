@@ -1,142 +1,101 @@
-USFranc Core
+# USFranc Core
 
 USFranc Core integration/staging tree
 
-🌐 Website: https://usfranc.com
+🌐 Website: https://usfranc.com  
+💻 Source: https://github.com/USFRANC/usfranc2
 
-💻 Source Code: https://github.com/USFRANC/usfranc2
+---
 
-What is USFranc?
+## What is USFranc?
 
-USFranc (USF) is a decentralized digital currency designed for fast global transactions with zero transaction fees.
+USFranc (USF) is a decentralized digital currency designed for fast global
+transactions with **zero transaction fees**.
 
-It operates on a peer-to-peer network without a central authority, allowing users to send and receive funds anywhere in the world.
+The network operates using **peer-to-peer technology** with no central
+authority. Transaction validation and block creation are handled collectively
+by nodes participating in the network.
 
-USFranc is built on a modified Litecoin Core codebase, using the Scrypt Proof-of-Work algorithm, but introduces a fixed-supply monetary model where all coins were created at the genesis phase.
+USFranc Core is the **official open-source implementation** of the USFranc
+protocol.
 
-The network maintains security and consensus through distributed nodes that validate transactions and blocks.
+---
 
-USFranc Core is the official open-source software that implements the USFranc protocol.
+## License
 
-For more information and downloads visit:
+USFranc Core is released under the **MIT License**.
+
+See the `COPYING` file for more information or visit:
+
+https://opensource.org/licenses/MIT
+
+---
+
+## Development Process
+
+The `master` branch is regularly built and tested but is not guaranteed to be
+completely stable.
+
+Stable releases are created using tagged versions in the repository.
+
+Development of the USFranc Core software is maintained by the USFranc
+development team.
+
+---
+
+## Testing
+
+Testing and code review are critical for maintaining network security.
+
+The project includes several types of automated tests.
+
+### Unit Tests
+
+Unit tests can be run with:
+
+make check
+
+
+Test sources are located in:
+src/test/
+
+
+---
+
+### Functional Tests
+
+Functional tests simulate real node behavior and network interaction.
+
+They can be run using:
+test/functional/test_runner.py
+
+---
+
+## Documentation
+
+Detailed documentation can be found in the `doc/` directory.
+
+Important documents include:
+
+- Blockchain specifications
+- Node setup guides
+- RPC API documentation
+- Build instructions
+
+---
+
+## Building
+
+Instructions for building USFranc Core can be found in:
+
+doc/build-unix.md
+
+
+---
+
+## Security
+
+If you discover a security vulnerability, please report it privately through
+the official website:
 
 https://usfranc.com
-
-Key Blockchain Parameters
-Parameter	Value
-Coin Name	USFranc
-Ticker	USF
-Consensus	Proof-of-Work (Scrypt)
-Block Time	2.5 minutes
-Total Supply	90,000,000,000 USF
-Block Reward	Premine only (Block 1)
-Transaction Fees	0 USF
-P2P Port	9333
-RPC Port	9332
-Monetary Model
-
-USFranc uses a fixed-supply monetary system.
-
-All coins were created in the first block.
-
-Block Height	Reward
-
-Block 1	90,000,000,000 USF
-
-Block 2+	0 USF
-
-Mining continues to secure the blockchain and produce blocks, but no additional coins are minted.
-
-Genesis Block
-Field	Value
-Message	"USFranc 2025 is born!"
-Genesis Hash	224b262e691177d3b6fb27b940de6889827a0f34dcf4fc5a717bf56b42a82c97
-
-Merkle Root	52faed47c9bc90f229220692251772fe30ff5211848223ad717439a70c41c019
-
-Timestamp	1759906343
-
-Nonce	353165
-
-Address Format
-
-USFranc supports Legacy and Bech32 addresses.
-
-Legacy Address
-LcFHXrfUP3y8VCQ8xAJNRJLqV
-
-Bech32 Address
-usf1xxxxxxxxxxxxxxxxxxxx
-
-USFranc Core Software
-
-The USFranc Core distribution includes the following binaries:
-
-usfrancd        Full node daemon
-usfranc-cli     RPC command interface
-usfranc-qt      Graphical wallet
-usfranc-wallet  Wallet utility
-usfranc-tx      Raw transaction tool
-Running a Node
-Start the daemon
-./src/usfrancd -daemon
-Check blockchain status
-./src/usfranc-cli getblockchaininfo
-Stop the node
-./src/usfranc-cli stop
-Example Configuration
-
-Create a configuration file:
-
-usfranc.conf
-
-Example configuration:
-
-server=1
-daemon=1
-
-rpcuser=node1
-rpcpassword=password
-rpcallowip=127.0.0.1
-rpcport=9332
-
-listen=1
-port=9333
-maxconnections=200
-txindex=1
-Mining
-
-Mining secures the network by validating blocks.
-
-Because USFranc uses a fixed supply model, mining does not produce new coins.
-
-Mining nodes continue to process transactions and maintain network consensus.
-
-Building from Source (Linux)
-
-Compile the software:
-
-./autogen.sh
-./configure
-make -j$(nproc)
-
-After compilation, binaries will be available in:
-
-src/
-Development
-
-USFranc Core is open-source and community driven.
-
-The project is based on Litecoin Core, but introduces modifications to support the USFranc monetary model and network parameters.
-
-Developers are encouraged to contribute improvements, security reviews, and tooling for the ecosystem.
-
-Repository:
-
-https://github.com/USFRANC/usfranc2
-
-License
-
-USFranc Core is released under the MIT License.
-
-See the COPYING file for details.
