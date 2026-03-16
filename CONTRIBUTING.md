@@ -1,65 +1,39 @@
-Contributing to USFranc Core
-Development Model
+# Contributing to USFranc Core
 
-The USFranc Core project is maintained by the USFranc development team.
+The USFranc Core repository is publicly available for transparency and
+open-source distribution.
 
-This repository is published publicly for transparency, auditing, and open-source distribution, but external code contributions are not accepted.
+At this time **external code contributions are not accepted**.
 
-Users are welcome to clone or pull the repository to run nodes, build the software, or inspect the codebase.
+The project is maintained internally by the USFranc development team.
 
-All development, code changes, and releases are handled internally by the USFranc Core maintainers.
+---
 
-Public Access
+## Public Access
 
-The repository is available publicly so that anyone can:
+Users are welcome to:
 
-Download and build the USFranc Core software
+- Clone the repository
+- Build and run nodes
+- Inspect the source code
+- Audit the blockchain implementation
 
-Run a full USFranc node
+Example:
 
-Inspect the source code
-
-Audit the blockchain implementation
-
-Verify protocol behavior
-
-You may clone the repository using:
 
 git clone https://github.com/USFRANC/usfranc2.git
-Issue Reporting
 
-If you discover a bug, security issue, or unexpected behavior, you may report it through the GitHub issue tracker.
 
-Please include the following information when reporting issues:
+---
 
-USFranc Core version
+## Issue Reporting
 
-Operating system
+If you encounter bugs or unexpected behavior, please report them using
+GitHub Issues.
 
-Steps to reproduce the issue
+Please include:
 
-Relevant logs or error messages
-
-Providing detailed reports helps the development team investigate and resolve issues more efficiently.
-
-Security Reports
-
-Security vulnerabilities should not be publicly disclosed immediately.
-
-If you discover a security issue affecting the USFranc network, please contact the development team directly through the official website:
-
-https://usfranc.com
-
-Code Integrity
-
-All official releases of USFranc Core are published through the official repository:
-
-https://github.com/USFRANC/usfranc2
-
-Users should only download binaries or source code from trusted official sources to ensure authenticity and security.
-
-License
-
-USFranc Core is released under the MIT License.
-
-By using the software you agree to the terms specified in the COPYING file included in this repository.
+- USFranc Core version
+- Operating system
+- Steps to reproduce
+- Logs or error messages
