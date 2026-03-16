@@ -53,10 +53,13 @@ The project includes several types of automated tests.
 
 Unit tests can be run with:
 
+
 make check
 
 
 Test sources are located in:
+
+
 src/test/
 
 
@@ -67,7 +70,10 @@ src/test/
 Functional tests simulate real node behavior and network interaction.
 
 They can be run using:
+
+
 test/functional/test_runner.py
+
 
 ---
 
@@ -87,6 +93,7 @@ Important documents include:
 ## Building
 
 Instructions for building USFranc Core can be found in:
+
 
 doc/build-unix.md
 
