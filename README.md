@@ -1,85 +1,138 @@
-Usfranc Core integration/staging tree
-=====================================
+What is USFranc?
 
-[![Build Status](https://travis-ci.org/usfranc-project/usfranc.svg?branch=master)](https://travis-ci.org/usfranc-project/usfranc)
+USFranc (USF) is a decentralized digital currency designed for fast global transactions with zero transaction fees.
+It operates on a peer-to-peer network without a central authority, allowing users to send and receive funds anywhere in the world.
+
+USFranc is built on a modified Litecoin Core codebase, using the Scrypt Proof-of-Work algorithm, but introduces a fixed-supply monetary model with all coins created at the genesis phase.
+
+The network maintains security and consensus through distributed nodes that validate transactions and blocks.
+
+The USFranc Core software is the official open-source implementation of the USFranc protocol.
+
+For more information and downloads visit:
 
 https://usfranc.com
 
-What is Usfranc?
-----------------
+Source code:
 
-Usfranc is an experimental digital currency that enables instant payments to
-anyone, anywhere in the world. Usfranc uses peer-to-peer technology to operate
-with no central authority: managing transactions and issuing money are carried
-out collectively by the network. Usfranc Core is the name of open source
-software which enables the use of this currency.
+https://github.com/USFRANC/usfranc2
 
-For more information, as well as an immediately useable, binary version of
-the Usfranc Core software, see [https://usfranc.com]).
+Key Blockchain Parameters
+Parameter	Value
+Coin Name	USFranc
+Ticker	USF
+Consensus	Proof-of-Work (Scrypt)
+Block Time	2.5 minutes
+Total Supply	90,000,000,000 USF
+Block Reward	Premine only (block 1)
+Transaction Fees	0 USF
+P2P Port	9333
+RPC Port	9332
+Monetary Model
+
+USFranc uses a fixed supply model.
+
+All coins were created in the first block.
+
+Block Height	Reward
+Block 1	90,000,000,000 USF
+Block 2+	0 USF
+
+Mining continues to secure the blockchain and produce blocks, but no additional coins are minted.
+
+Genesis Block
+Field	Value
+Message	"USFranc 2025 is born!"
+Genesis Hash	224b262e691177d3b6fb27b940de6889827a0f34dcf4fc5a717bf56b42a82c97
+Merkle Root	52faed47c9bc90f229220692251772fe30ff5211848223ad717439a70c41c019
+Timestamp	1759906343
+Nonce	353165
+Address Format
+
+USFranc supports legacy and Bech32 addresses.
+
+Example formats:
+
+Legacy:
+
+LcFHXrfUP3y8VCQ8xAJNRJLqV3vqZ5rWy9
+
+Bech32:
+
+usf1xxxxxxxxxxxxxxxxxxxx
+USFranc Core Software
+
+The USFranc Core client includes:
+
+usfrancd        Full node daemon
+usfranc-cli     RPC command interface
+usfranc-qt      Graphical wallet
+usfranc-wallet  Wallet utility
+usfranc-tx      Raw transaction tool
+Running a Node
+
+Start the daemon:
+
+./src/usfrancd -daemon
+
+Check blockchain status:
+
+./src/usfranc-cli getblockchaininfo
+
+Stop the node:
+
+./src/usfranc-cli stop
+Example Configuration
+
+Create usfranc.conf inside the data directory.
+
+Example:
+
+server=1
+daemon=1
+
+rpcuser=node1
+rpcpassword=password
+rpcallowip=127.0.0.1
+rpcport=9332
+
+listen=1
+port=9333
+maxconnections=200
+txindex=1
+Mining
+
+Mining secures the network by validating blocks.
+
+Since USFranc uses a fixed supply model, mining does not produce new coins but continues to maintain the integrity of the blockchain.
+
+Mining nodes can run continuously to process transactions and maintain network consensus.
+
+Building from Source (Linux)
+
+Install dependencies and build:
+
+./autogen.sh
+./configure
+make -j$(nproc)
+
+After compilation the binaries will be available in:
+
+src/
+Development
+
+USFranc Core is open source and community driven.
+
+The project is based on Litecoin Core but includes modifications for the USFranc monetary model and network parameters.
+
+Developers are encouraged to contribute improvements, security reviews, and tooling for the ecosystem.
+
+Repository:
+
+https://github.com/USFRANC/usfranc2
 
 License
--------
 
-Usfranc Core is released under the terms of the MIT license. See [COPYING](COPYING) for more
-information or see https://opensource.org/licenses/MIT.
+USFranc Core is released under the MIT License.
 
-Development Process
--------------------
-
-The `master` branch is regularly built (see `doc/build-*.md` for instructions) and tested, but it is not guaranteed to be
-completely stable. [Tags](https://github.com/USFRANC/usfranc2.git) are created
-regularly from release branches to indicate new official, stable release versions of Usfranc Core.
-
-The https://github.com/usfranc-project/gui repository is used exclusively for the
-development of the GUI. Its master branch is identical in all monotree
-repositories. Release branches and tags do not exist, so please do not fork
-that repository unless it is for development reasons.
-
-The contribution workflow is described in [CONTRIBUTING.md](CONTRIBUTING.md)
-and useful hints for developers can be found in [doc/developer-notes.md](doc/developer-notes.md).
-
-The developer [mailing list](https://groups.google.com/forum/#!forum/usfranc-de)
-should be used to discuss complicated or controversial changes before working
-on a patch set.
-
-Developer IRC can be found on Freenode at #usfranc-dev.
-
-Testing
--------
-
-Testing and code review is the bottleneck for development; we get more pull
-requests than we can review and test on short notice. Please be patient and help out by testing
-other people's pull requests, and remember this is a security-critical project where any mistake might cost people
-lots of money.
-
-### Automated Testing
-
-Developers are strongly encouraged to write [unit tests](src/test/README.md) for new code, and to
-submit new unit tests for old code. Unit tests can be compiled and run
-(assuming they weren't disabled in configure) with: `make check`. Further details on running
-and extending unit tests can be found in [/src/test/README.md](/src/test/README.md).
-
-There are also [regression and integration tests](/test), written
-in Python, that are run automatically on the build server.
-These tests can be run (if the [test dependencies](/test) are installed) with: `test/functional/test_runner.py`
-
-The Travis CI system makes sure that every pull request is built for Windows, Linux, and macOS, and that unit/sanity tests are run automatically.
-
-### Manual Quality Assurance (QA) Testing
-
-Changes should be tested by somebody other than the developer who wrote the
-code. This is especially important for large or high-risk changes. It is useful
-to add a test plan to the pull request description if testing the changes is
-not straightforward.
-
-Translations
-------------
-
-We only accept translation fixes that are submitted through [Bitcoin Core's Transifex page](https://explore.transifex.com/bitcoin/bitcoin/).
-Translations are converted to Usfranc periodically.
-
-Translations are periodically pulled from Transifex and merged into the git repository. See the
-[translation process](doc/translation_process.md) for details on how this works.
-
-**Important**: We do not accept translation changes as GitHub pull requests because the next
-pull from Transifex would automatically overwrite them again.
+See the COPYING file for details.
