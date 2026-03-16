@@ -40,7 +40,9 @@ USFranc uses a fixed-supply monetary system.
 All coins were created in the first block.
 
 Block Height	Reward
+
 Block 1	90,000,000,000 USF
+
 Block 2+	0 USF
 
 Mining continues to secure the blockchain and produce blocks, but no additional coins are minted.
@@ -49,17 +51,23 @@ Genesis Block
 Field	Value
 Message	"USFranc 2025 is born!"
 Genesis Hash	224b262e691177d3b6fb27b940de6889827a0f34dcf4fc5a717bf56b42a82c97
+
 Merkle Root	52faed47c9bc90f229220692251772fe30ff5211848223ad717439a70c41c019
+
 Timestamp	1759906343
+
 Nonce	353165
+
 Address Format
 
 USFranc supports Legacy and Bech32 addresses.
 
 Legacy Address
-LcFHXrfUP3y8VCQ8xAJNRJLqV3vqZ5rWy9
+LcFHXrfUP3y8VCQ8xAJNRJLqV
+
 Bech32 Address
 usf1xxxxxxxxxxxxxxxxxxxx
+
 USFranc Core Software
 
 The USFranc Core distribution includes the following binaries:
