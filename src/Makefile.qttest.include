@@ -70,4 +70,4 @@ test_usfranc_qt_check : qt/test/test_usfranc-qt$(EXEEXT) FORCE
 	$(MAKE) check-TESTS TESTS=$^
 
 test_usfranc_qt_clean: FORCE
-	rm -f $(CLEAN_litecoin_QT_TEST) $(qt_test_test_usfranc_qt_OBJECTS)
+	rm -f $(CLEAN_usfranc_QT_TEST) $(qt_test_test_usfranc_qt_OBJECTS)
