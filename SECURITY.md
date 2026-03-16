@@ -2,14 +2,25 @@
 
 ## Reporting a Vulnerability
 
-To report security issues send an email to contact@usfranc.org (not for support).
+If you discover a security vulnerability affecting USFranc Core, please do not
+open a public GitHub issue.
 
-The following keys may be used to communicate sensitive information to developers:
+Instead report the issue privately through the official website:
 
-| Name | Fingerprint |
-|------|-------------|
-| Charlie Lee | 1A2511E978239E491A096D0A828AC1F94EF26053 |
-| Xinxi Wang | EEF1C9FE09262D71DDE83C223EF697503BF73187 |
-| Adrian Gallagher | 59CAF0E96F23F53747945FD4FE3348877809386C |
+https://usfranc.com
 
-You can import a key by running the following command with that individual’s fingerprint: `gpg --recv-keys "<fingerprint>"` Ensure that you put quotes around fingerprints containing spaces.
+Include the following information:
+
+- Description of the vulnerability
+- Steps to reproduce
+- Potential impact
+- Suggested mitigation if available
+
+The development team will review the report and take appropriate action.
+
+---
+
+## Responsible Disclosure
+
+Security issues should be disclosed responsibly to allow time for fixes before
+public disclosure.
