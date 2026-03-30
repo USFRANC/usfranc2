@@ -1,4 +1,4 @@
-# USFRANC Core
+# USFRANC CORE
 
 USFranc Core integration/staging tree
 
